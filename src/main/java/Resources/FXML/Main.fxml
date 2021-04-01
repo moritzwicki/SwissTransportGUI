@@ -20,11 +20,6 @@
               <fx:include source="DepartureBoard.fxml" />
             </content>
           </Tab>
-            <Tab text="Karte">
-               <content>
-                    <fx:include source="Map.fxml" />
-               </content>
-            </Tab>
         </tabs>
       </JFXTabPane>
    </children>
