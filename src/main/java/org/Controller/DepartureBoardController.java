@@ -6,8 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
 import org.Core.Transport;
 import org.Models.Station;
 import org.Models.StationBoard;
@@ -16,12 +14,9 @@ import org.TableViewObjects.StationBoardTableViewObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class DepartureBoardController {
     @FXML JFXTextField stationTextField;

@@ -7,7 +7,6 @@ import com.jfoenix.controls.JFXTimePicker;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import org.Core.Transport;
 import org.Models.Connection;
@@ -97,28 +96,6 @@ public class ConnectionAndStationsController {
             showNothingIsInTextfileAlert();
         }
     }
-    @FXML
-    private void submitSearchWithEnter(KeyEvent keyEvent) {
-        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
-            searchStations_Click();
-        }
-    }
-
-//    @FXML
-//    private void autocompletionForStationSearch(KeyEvent keyEvent) {
-//        if (stationsTextField.getText().length() > 0) {
-//            if (!isKeyCodeTab(keyEvent)) {
-//                for (Station station :transportApi.getStations(stationsTextField.getText()).StationList) {
-//                    stationNameList.add(station.Name);
-//                }
-//            }
-//        }
-//    }
-
-
-    private boolean isKeyCodeTab(KeyEvent keyEvent) {
-        return keyEvent.getCode().equals(KeyCode.TAB);
-    }
 
     private void addConnectionToTableView(Connection connection) throws ParseException {
         SimpleDateFormat dateAndHourFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
@@ -169,15 +146,5 @@ public class ConnectionAndStationsController {
     @FXML
     private void selectConnection_SelectedIndexChanged() {
         saveConnectionButton.setDisable(false);
-    }
-
-    @FXML
-    private void saveConnectionInFile_Click() {
-        //TODO: Save The Selected Connection in a File
-    }
-
-    @FXML
-    private void sendConnectionWithMail() {
-        //TODO: Send Connetion via Mail
     }
 }
