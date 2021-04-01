@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="709.0" prefWidth="1054.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Controller.DepartureBoardController">
+   <children>
+      <Label layoutX="463.0" layoutY="44.0" text="Station Suchen">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="stationTextField" layoutX="208.0" layoutY="139.0" prefHeight="30.0" prefWidth="150.0" promptText="Station"/>
+      <JFXButton fx:id="stationSearchButton" layoutX="736.0" layoutY="139.0" onAction="#searchStationBoard_Click" prefHeight="30.0" prefWidth="110.0" text="Suchen">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="stationBoardTableView" editable="true" layoutX="208.0" layoutY="187.0" prefHeight="355.0" prefWidth="638.0">
+        <columns>
+          <TableColumn fx:id="departureTimeColumn" prefWidth="315.0" text="Abfahrtszeit" />
+          <TableColumn fx:id="arrivalStationColumn" prefWidth="321.0" text="Ankunftsort" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>

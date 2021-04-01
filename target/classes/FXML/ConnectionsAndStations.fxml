@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.5" prefHeight="707.0" prefWidth="1075.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Controller.ConnectionAndStationsController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="701.0" prefWidth="565.0">
+            <children>
+                <Label layoutX="30.0" layoutY="30.0" text="Verbindungen Suchen">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    </Label>
+                <JFXTextField fx:id="startPointTextFiled" layoutX="30.0" layoutY="80.0" prefHeight="27.0" prefWidth="140.0" promptText="Startort" />
+                <JFXTextField fx:id="destinationTextField" layoutX="177.0" layoutY="80.0" prefHeight="27.0" prefWidth="140.0" promptText="Zielort" />
+                <JFXDatePicker fx:id="targetDatePicker" editable="false" layoutX="30.0" layoutY="125.0" prefHeight="27.0" prefWidth="140.0" promptText="Datum" />
+                <JFXTimePicker fx:id="departureTimePicker" layoutX="177.0" layoutY="125.0" prefHeight="27.0" prefWidth="140.0" promptText="Uhrzeit" editable="false"/>
+                <JFXButton fx:id="verbindungenSuchenButton" layoutX="388.0" layoutY="90.0" onAction="#searchConnection_Click" prefHeight="35.0" prefWidth="110.0" text="Suchen">
+               <font>
+                  <Font size="15.0" />
+               </font></JFXButton>
+            <Label layoutX="30.0" layoutY="252.0" text="Ergebnisse">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="connectionsTableView" layoutX="30.0" layoutY="305.0" prefHeight="366.0" prefWidth="470.0" onMouseClicked="#selectConnection_SelectedIndexChanged">
+              <columns>
+                <TableColumn fx:id="departureTimeColumn" prefWidth="75.0" text="Abfahrtszeit" />
+                <TableColumn fx:id="departurePlatformColumn" prefWidth="75.0" text="Gleis" />
+                <TableColumn fx:id="arrivalTimeColumn" prefWidth="75.0" text="Ankunftszeit" />
+                <TableColumn fx:id="arrivalPlatformColumn" prefWidth="75.0" text="Gleis" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <JFXButton fx:id="saveConnectionButton" disable="true" layoutX="360.0" layoutY="671.0" text="Verbindung Speichern" />
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="709.0" prefWidth="504.0">
+            <children>
+                <Label layoutX="30.0" layoutY="30.0" text="Station Suchen">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            <JFXTextField fx:id="stationsTextField" layoutX="30.0" layoutY="125.0" onKeyTyped="#removeSpecialCharacters" prefHeight="27.0" prefWidth="200.0" />
+            <JFXButton fx:id="stationSearchButton" layoutX="363.0" layoutY="121.0" onAction="#searchStations_Click" prefHeight="35.0" prefWidth="110.0" text="Suchen">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXListView fx:id="stationsListView" layoutX="30.0" layoutY="305.0" prefHeight="366.0" prefWidth="470.0" />
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>
